@@ -12,11 +12,20 @@ $consulta = $cn->query("select cd_usuario,nm_usuario,ds_email,ds_senha,ds_status
 if($consulta->rowCount() == 1) {
     //echo 'Usuário está cadastrado';
     $exibeUsuario = $consulta->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['ID'] = $exibeUsuario['cd_usuario'];
-    header('location:index.php');
+    
+    if($exibeUsuario['ds_status'] == 0 ) {
+        $_SESSION['ID'] = $exibeUsuario['cd_usuario'];
+        $_SESSION['STATUS']=0;
+        header('location:index.php');
+    }
+    else{
+        $_SESSION['ID'] = $exibeUsuario['cd_usuario'];
+        $_SESSION['STATUS']=1;
+        header('location:index.php');
+    }
 }
-else{
-    //echo 'Usuário não cadastrado';
-    header('location:erro.php');
-}
+    else{
+        //echo 'Usuário não cadastrado';
+        header('location:erro.php');
+    }
 ?>
