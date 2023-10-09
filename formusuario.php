@@ -25,9 +25,9 @@
 </style>
 
 <script>
-	
+
 $(document).ready(function(){
-    $("#cep").mask("00000-000");
+    $("#cep").mask('00000-000');
 });	
 
 </script>
@@ -46,55 +46,53 @@ $(document).ready(function(){
 			<div class="col-sm-4 col-sm-offset-4">
 				<h2>Cadastro de novo Cliente</h2>
 
-				<form method="post" action="inserirUsuario.php" name="logon">
+				<form method="post" action="inserirusuario.php" name="logon">
 				
 					<div class="form-group">
 				
 						<label for="nome">Nome</label>
-						<input name="nome" type="text" class="form-control" required id="nome">
+						<input name="txtnome" type="text" class="form-control" required id="nome">
 					</div>
 				
 				<div class="form-group">
 				
 						<label for="sobrenome">Sobrenome</label>
-						<input name="sobrenome" type="text" class="form-control" required id="sobrenome">
+						<input name="txtsobrenome" type="text" class="form-control" required id="sobrenome">
 				</div>
 					
 					
 				<div class="form-group">
 				
 						<label for="email">E-mail</label>
-						<input name="email" type="email" class="form-control" required id="email">
+						<input name="txtemail" type="email" class="form-control" required id="email">
 				</div>
 					
 				
 				<div class="form-group">
 				
 						<label for="senha">Senha</label>
-						<input name="senha" type="password" class="form-control" required id="senha">
+						<input name="txtsenha" type="password" class="form-control" required id="senha">
 				</div>
 					
 				<div class="form-group">
 				
 						<label for="endereco">Endereço</label>
-						<textarea name="endereco" rows="5" class="form-control" required id="endereco"></textarea>
+						<textarea name="txtendereco" rows="5" class="form-control" required id="endereco"></textarea>
 				</div>
 					
 					
 				<div class="form-group">
 				
 						<label for="cidade">Cidade</label>
-						<input name="cidade" type="text" class="form-control" required id="cidade">
+						<input name="txtcidade" type="text" class="form-control" required id="cidade">
 				</div>
-					
 					
 				<div class="form-group">
 				
 						<label for="cep">CEP</label>
-						<input name="cep" type="text" class="form-control" required id="cep">
+						<input name="txtcep" type="text" class="form-control" required id="cep">
 				</div>
-				
-							
+						
 				<button type="submit" class="btn btn-lg btn-default">
 					
 					<span class="glyphicon glyphicon-pencil"> Cadastrar</span>
@@ -107,10 +105,9 @@ $(document).ready(function(){
 		</div>
 	</div>
 	
+	<br>
+	<br>
 	<?php include 'rodape.html' ?>
-	
-	
-	
 	
 </body>
 </html>
