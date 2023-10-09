@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>TechNivek</title>
+    <title>TechNivek | Home</title>
     <link rel="shortcut icon" href="img/smartphone.png"> <!--color of logo: #267CF1-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -32,7 +32,7 @@
   include 'cabecalho.html';
 
   // Variável $exibe vai receber a variável $cn que receberá o resultado de uma query (consulta)
-  $consulta = $cn->query('select nm_celular, vl_preco, qt_estoque, ds_foto from vw_celular');
+  $consulta = $cn->query('select cd_celular, nm_celular, vl_preco, qt_estoque, ds_foto from vw_celular');
   ?>
   
   <div class="container-fluid">
@@ -44,9 +44,11 @@
 			<div><h5>R$ <?php echo number_format ($exibe['vl_preco'],2,',','.') ?></h5></div>
 
         <div class="text-center">
-          <button class="btn btn-lg btn-block btn-info">
-            <span class="glyphicon glyphicon-circle-arrow-up"> Detalhes</span>
-          </button>
+          <a href="detalhes.php?cd=<?php echo $exibe['cd_celular'];?>">
+            <button class="btn btn-lg btn-block btn-info">
+              <span class="glyphicon glyphicon-circle-arrow-up"> Detalhes</span>
+            </button>
+          </a>
         </div>
 
         <div class="text-center" style="margin-top:5px; margin-bottom:45px;">
