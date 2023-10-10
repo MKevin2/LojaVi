@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>TechNivek | Logon de usuário</title>
+<title>TechNivek | Logon de Usuário</title>
 <link rel="shortcut icon" href="img/smartphone.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
