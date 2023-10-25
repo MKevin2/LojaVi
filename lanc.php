@@ -26,9 +26,10 @@
 <body>
 
   <?php
+  session_start();
+  include 'conexao.php';
   include 'nav.php';
   include 'cabecalho.html';
-  include 'conexao.php';
 
   // Variável $exibe vai receber a variável $cn que receberá o resultado de uma query (consulta)
   $consulta = $cn->query('select nm_celular, vl_preco, qt_estoque, ds_foto from vw_celular where sg_lancamento = "S"');
@@ -42,10 +43,12 @@
 			<div><h4><b><?php echo mb_strimwidth ($exibe['nm_celular'],0,30,'...') ?></b></h4></div>
 			<div><h5>R$ <?php echo number_format ($exibe['vl_preco'],2,',','.') ?></h5></div>
 
-        <div class="text-center">
-          <button class="btn btn-lg btn-block btn-info">
-            <span class="glyphicon glyphicon-circle-arrow-up"> Detalhes</span>
-          </button>
+      <div class="text-center">
+          <a href="detalhes.php?cd=<?php echo $exibe['cd_celular'];?>">
+            <button class="btn btn-lg btn-block btn-info">
+              <span class="glyphicon glyphicon-circle-arrow-up"> Detalhes</span>
+            </button>
+          </a>
         </div>
 
         <div class="text-center" style="margin-top:5px; margin-bottom:45px;">
