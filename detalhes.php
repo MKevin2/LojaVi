@@ -31,9 +31,15 @@
 	include 'nav.php';
 	include 'cabecalho.html';
 
+// Se não estiver vazia a variável cd, vai executar o código 	
+if(!empty($_GET['cd'])){
 	$cd_celular = $_GET['cd'];
 	$consulta = $cn ->query("select * from vw_celular where cd_celular='$cd_celular'");
 	$exibe = $consulta->fetch(PDO::FETCH_ASSOC);
+// Se estiver vazia, vai direcionar para a página index
+} else{
+	header('location:index.php');
+}
 	?>
 	
 <div class="container-fluid">
