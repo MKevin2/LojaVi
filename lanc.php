@@ -19,6 +19,7 @@
 	<style type="text/css">
 		.navbar{
 			margin-bottom: 0;
+      background-color: black;
 		}
 	</style>
 </head>
@@ -32,7 +33,7 @@
   include 'cabecalho.html';
 
   // Variável $exibe vai receber a variável $cn que receberá o resultado de uma query (consulta)
-  $consulta = $cn->query('select nm_celular, vl_preco, qt_estoque, ds_foto from vw_celular where sg_lancamento = "S"');
+  $consulta = $cn->query('select nm_celular, vl_preco, qt_estoque, ds_foto, cd_celular from vw_celular where sg_lancamento = "S"');
   ?>
   
   <div class="container-fluid">
@@ -42,6 +43,7 @@
 			<img src="img/<?php echo $exibe['ds_foto']; ?>.webp" class="img-responsive" style="width: 100%">
 			<div><h4><b><?php echo mb_strimwidth ($exibe['nm_celular'],0,30,'...') ?></b></h4></div>
 			<div><h5>R$ <?php echo number_format ($exibe['vl_preco'],2,',','.') ?></h5></div>
+
 
       <div class="text-center">
           <a href="detalhes.php?cd=<?php echo $exibe['cd_celular'];?>">

@@ -2,7 +2,6 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>TechNivek</title>
     <link rel="shortcut icon" href="img/smartphone.png"> <!--color of logo: #267CF1-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,6 +17,7 @@
 	<style type="text/css">
 		.navbar{
 			margin-bottom: 0;
+      background-color: black;
 		}
 	</style>
 </head>
@@ -25,14 +25,16 @@
 <body>
 
   <?php
+
+  session_start();
+  include 'conexao.php';
   include 'nav.php';
   include 'cabecalho.html';
-  include 'conexao.php';
 
   $cat = $_GET['cat'];
 
   // Variável $exibe vai receber a variável $cn que receberá o resultado de uma query (consulta)
-  $consulta = $cn->query("select nm_celular, vl_preco, ds_foto, qt_estoque from vw_celular where ds_marca = '$cat'");
+  $consulta = $cn->query("select nm_celular, vl_preco, ds_foto, qt_estoque, cd_celular from vw_celular where ds_marca = '$cat'");
   ?>
   
   <div class="container-fluid">
@@ -43,10 +45,12 @@
 			<div><h4><b><?php echo mb_strimwidth ($exibe['nm_celular'],0,30,'...') ?></b></h4></div>
 			<div><h5>R$ <?php echo number_format ($exibe['vl_preco'],2,',','.') ?></h5></div>
 
-        <div class="text-center">
-          <button class="btn btn-lg btn-block btn-info">
-            <span class="glyphicon glyphicon-circle-arrow-up"> Detalhes</span>
-          </button>
+      <div class="text-center">
+          <a href="detalhes.php?cd=<?php echo $exibe['cd_celular'];?>">
+            <button class="btn btn-lg btn-block btn-info">
+              <span class="glyphicon glyphicon-circle-arrow-up"> Detalhes</span>
+            </button>
+          </a>
         </div>
 
         <div class="text-center" style="margin-top:5px; margin-bottom:45px;">
@@ -73,5 +77,6 @@
   include 'rodape.html';
   ?>
   
+  <title>TechNivek | <?php echo $cat?></title>
 </body>
 </html>

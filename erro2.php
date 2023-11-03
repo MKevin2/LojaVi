@@ -1,8 +1,8 @@
-<!doctype html>
+<doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>TechNivek - Logon de usuário</title>
+<title>TechNivek | Logon de Usuário</title>
 <link rel="shortcut icon" href="img/smartphone.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -13,20 +13,20 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
+		
 <style>
-.navbar{
-	margin-bottom: 0;
-	background-color: black;
-}
+    .navbar{
+		margin-bottom: 0;
+		background-color: black;
+    }	
 </style>
-	
+
 </head>
 
 <body>
-
 <?php
-	include 'conexao.php';	
+	session_start();
+	include 'conexao.php';
 	include 'nav.php';
 	include 'cabecalho.html';
 ?>
@@ -34,18 +34,17 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4 text-center">
-				<h2>Usuário ou Senha incorreto!!</h2>
-				<a href="formLogon.php" class="btn btn-block btn-default" role="button">Tentar Novamente</a>
-				
-                <a href="formusuario.php">
-                    <button type="button" class="btn btn-lg btn-link">
-					    Ainda não sou cadastrado
-				    </button>			
-                </a>
+				<h2>Celular não encontrado!</h2>
+				<br>
+				<a href="index.php" class="btn btn-block btn-info" role="button">Pesquisar Novamente</a>		
 			</div>
 		</div>
 	</div>
-	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<?php include 'rodape.html' ?>
 
 </body>

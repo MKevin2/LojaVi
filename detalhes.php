@@ -19,6 +19,7 @@
 <style>
 	.navbar{
 	    margin-bottom: 0;
+		background-color: black;
 	}
 </style>
 </head>

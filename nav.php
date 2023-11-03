@@ -1,3 +1,4 @@
+
 <head>
 <link rel="shortcut icon" href="img/smartphone.png"> <!--color of logo: #267CF1-->
 </head>
@@ -17,9 +18,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php"><img src="img/botao-home.png"/><span class="sr-only">(current)</span></a></li>
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" name="frmpesquisa" method="get" action="busca.php">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Pesquisar...">
+            <input type="text" class="form-control" placeholder="Pesquisar..." name="txtBuscar">
           </div>
           <button type="submit" class="btn btn-default">Buscar</button>
         </form>
@@ -50,7 +51,7 @@
             <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair </a></li>
           
           <?php } else { ?>
-            <li><a href="adm.php"><button class="btn-sm btn-danger">Administrador</button></a></li>
+            <li><a href="adm.php"><button class="btn btn-info">Administrador</button></a></li>
             <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair </a></li>
           <?php }  } ?>
       </ul>
