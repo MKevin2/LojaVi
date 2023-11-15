@@ -45,10 +45,10 @@ if(!empty($_GET['cd'])){
 	
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-4 col-sm-offset-1">
+		<div class="col-sm-3 col-sm-offset-1">
 			 <h1><center>Detalhes do Produto</center></h1>
 			 <br>
-			 <img src="img/<?php echo $exibe['ds_foto'];?>.webp" class="img-responsive" style="width:100%;">
+			 <img src="img/<?php echo $exibe['ds_foto'];?>" class="img-responsive" style="width:100%;">
 			
 			 <!-- 
 			# Fotos adicionais se necessário
